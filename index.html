@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Júnior</title>
+    <style>
+        /* Reset de margens e paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #021E30;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            max-width: 150px;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FA8200; /* Laranja */
+        }
+
+        /* Seção de Introdução */
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-color: #e2e8f0;
+            padding: 20px;
+            text-align: center;
+        }
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #01A9E5; /* Azul */
+        }
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Seção de Serviços */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: #ffffff;
+        }
+        .service-item {
+            width: 30%;
+            background-color: #021E30;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            transform: scale(1.05);
+            background-color: #01A9E5; /* Azul claro ao passar o mouse */
+        }
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #FA8200; /* Laranja */
+        }
+
+        /* Seção de Contato */
+        .contact {
+            background-color: #f8f9fa;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #01A9E5; /* Azul */
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact button {
+            padding: 10px;
+            background-color: #FA8200; /* Laranja */
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact button:hover {
+            background-color: #01A9E5; /* Azul claro ao passar o mouse */
+        }
+
+        /* Efeito de scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Link para logo -->
+        <a href="#">
+            <img src="./Logo Miniatura (1).png" alt="Logo da Empresa" class="logo">
+        </a>
+        <h1>Bem-vindo à Fonte Júnior</h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="intro" id="sobre">
+        <div>
+            <h2>Quem Somos?</h2>
+            <p>Somos uma empresa júnior formada por estudantes talentosos, comprometidos em oferecer soluções inovadoras e de alta qualidade para nossos clientes. Nosso objetivo é transformar ideias em realidade, sempre com dedicação e profissionalismo.</p>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="service-item">
+            <h3>Consultoria</h3>
+            <p>Oferecemos serviços de consultoria em diversas áreas, ajudando empresas a crescerem de forma eficiente e sustentável.</p>
+        </div>
+        <div class="service-item">
+            <h3>Desenvolvimento</h3>
+            <p>Desenvolvemos soluções tecnológicas customizadas, com foco em resultados práticos e de fácil integração.</p>
+        </div>
+        <div class="service-item">
+            <h3>Gestão de Projetos</h3>
+            <p>Gerenciamos projetos de diferentes portes com foco em entrega no prazo e dentro do orçamento, garantindo a máxima qualidade.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <h2>Entre em Contato</h2>
+        <form id="formContato">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script>
+        // Função para envio de formulário (simulação)
+        document.getElementById('formContato').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mensagem enviada com sucesso!');
+            document.getElementById('formContato').reset(); // Limpa o formulário
+        });
+    </script>
+
+</body>
+</html>
