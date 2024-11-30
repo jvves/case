@@ -142,6 +142,73 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            /* Header */
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .logo {
+                max-width: 100px;
+                top: 10px;
+                left: 10px;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+                font-size: 1rem;
+            }
+
+            /* Introdução */
+            .intro {
+                flex-direction: column;
+                height: auto;
+                padding: 40px 20px;
+            }
+            .intro h2 {
+                font-size: 1.5rem;
+            }
+            .intro p {
+                font-size: 1rem;
+            }
+
+            /* Serviços */
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-item {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            /* Contato */
+            .contact form {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Ajustes para tablets */
+            nav a {
+                font-size: 1.1rem;
+            }
+
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .services {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .service-item {
+                width: 45%;
+            }
+        }
     </style>
 </head>
 <body>
